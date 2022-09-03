@@ -1,11 +1,5 @@
-import { AnyAction } from '@reduxjs/toolkit';
 import { RootState } from '../../store';
-import {
-  ADD_COUNTER,
-  DECREMENT_COUNTER,
-  INCREMENT_COUNTER,
-  REMOVE_COUNTER,
-} from './counterActions';
+import { CounterAction, CounterEmptyAction, ACTIONS } from './counterActions';
 
 type counterStateType = {
   count: number;
@@ -22,10 +16,10 @@ const initialState: countersListStateType = {
 
 export default function counterReducer(
   state: countersListStateType = initialState,
-  action: AnyAction
+  action: CounterAction | CounterEmptyAction
 ): countersListStateType {
   switch (action.type) {
-    case ADD_COUNTER: {
+    case ACTIONS.ADD_COUNTER: {
       const prevCountersSum = Object.entries(state.counters).reduce(
         (sum, [_, counter]) => sum + counter.count,
         0
@@ -39,9 +33,9 @@ export default function counterReducer(
         uuid: state.uuid + 1,
       };
     }
-    case REMOVE_COUNTER: {
+    case ACTIONS.REMOVE_COUNTER: {
       let filteredCounters = Object.assign({}, state.counters);
-      delete filteredCounters[action.payload];
+      delete filteredCounters[action.payload.id];
       return {
         ...state,
         counters: {
@@ -49,26 +43,26 @@ export default function counterReducer(
         },
       };
     }
-    case INCREMENT_COUNTER: {
+    case ACTIONS.INCREMENT_COUNTER: {
       return {
         ...state,
         counters: {
           ...state.counters,
-          [action.payload]: {
-            ...state.counters[action.payload],
-            count: state.counters[action.payload].count + 1,
+          [action.payload.id]: {
+            ...state.counters[action.payload.id],
+            count: state.counters[action.payload.id].count + 1,
           },
         },
       };
     }
-    case DECREMENT_COUNTER: {
+    case ACTIONS.DECREMENT_COUNTER: {
       return {
         ...state,
         counters: {
           ...state.counters,
-          [action.payload]: {
-            ...state.counters[action.payload],
-            count: state.counters[action.payload].count - 1,
+          [action.payload.id]: {
+            ...state.counters[action.payload.id],
+            count: state.counters[action.payload.id].count - 1,
           },
         },
       };
