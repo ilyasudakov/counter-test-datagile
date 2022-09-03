@@ -26,7 +26,7 @@ function CounterWithControls({
           className={buttonClassses}
           onClick={() => incrementCounter(counterId)}
         >
-          <PlusIcon className="text-blue-400" />
+          <PlusIcon className="text-blue-500" />
         </Button>
       }
       rightSideControls={

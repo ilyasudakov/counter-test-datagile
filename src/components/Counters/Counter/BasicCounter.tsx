@@ -22,18 +22,10 @@ function BasicCounter({
         {rightSideControls}
       </div>
       <div className="flex">
-        <Button
-          className="bg-red-100 text-red-700 text-sm"
-          onClick={() => removeCounter(counterId)}
-        >
-          Удалить
-        </Button>
+        <DeleteButton onRemove={() => removeCounter(counterId)} />
         {controlPanel}
       </div>
-      <div
-        className="text-sm bg-indigo-100 rounded-[25px] px-2 
-      text-indigo-700"
-      >{`ID: ${counterId}`}</div>
+      <IDBadge counterId={counterId} />
     </div>
   );
 }
@@ -55,3 +47,24 @@ const mapStateToProps = (state: RootState, ownProps: OwnPropsType) => ({
 const connectorCounter = connect(mapStateToProps, { removeCounter });
 type BasicCounterProps = ConnectedProps<typeof connectorCounter>;
 export default connectorCounter(BasicCounter);
+
+const DeleteButton = ({ onRemove }: { onRemove: () => void }) => {
+  return (
+    <Button className="bg-red-100 text-red-700 text-sm" onClick={onRemove}>
+      Удалить
+    </Button>
+  );
+};
+
+const IDBadge = ({
+  counterId,
+}: {
+  counterId: BasicCounterProps['counterId'];
+}) => {
+  return (
+    <div
+      className="text-sm bg-indigo-100 rounded-[25px] px-2 
+  text-indigo-700"
+    >{`ID: ${counterId}`}</div>
+  );
+};
