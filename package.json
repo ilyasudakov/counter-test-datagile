@@ -29,6 +29,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build-vercel": "tsc && vite build --config vite.vercel-config.ts",
     "start": "npm i && vite --open",
     "preview": "vite preview"
   },
