@@ -20,6 +20,10 @@
     ".": {
       "import": "./dist/counter-test-datagile.es.js",
       "require": "./dist/counter-test-datagile.umd.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "author": {
@@ -27,7 +31,7 @@
     "email": "ilyasudakov.dev@gmail.com",
     "url": "https://ilyasudakov.vercel.app"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
