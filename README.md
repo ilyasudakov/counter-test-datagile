@@ -11,12 +11,12 @@ npm i counter-test-datagile
 В приложении:
 
 ```javascript
-import { Counters } from 'counter-test-datagile';
+import Counter from 'counter-test-datagile';
 
 const MyComponent = () => {
   return (
     <>
-      <Counters />
+      <Counter />
     </>
   );
 };

@@ -1,4 +1,3 @@
-import { useAutoAnimate } from '@formkit/auto-animate/react';
 import { connect, ConnectedProps } from 'react-redux';
 
 import Button from '../Button';
@@ -9,11 +8,10 @@ import { RootState } from '../../store';
 import { addCounter } from './counterActions';
 
 const Counters = ({ addCounter, counterList }: CountersProps) => {
-  const [parent] = useAutoAnimate<HTMLUListElement>();
   return (
     <div>
       <Button onClick={addCounter}>Добавить счетчик</Button>
-      <ul ref={parent} className="grid gap-4 mt-4 items-start">
+      <ul className="grid gap-4 mt-4 items-start">
         {Object.keys(counterList).length === 0 && <NoItemsBadge />}
         {Object.entries(counterList).map(([id, data], index) => (
           <li key={data.counterId}>

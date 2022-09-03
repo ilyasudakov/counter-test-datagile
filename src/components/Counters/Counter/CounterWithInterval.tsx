@@ -13,8 +13,11 @@ const CounterWithInterval = ({
 }: CounterWithIntervalProps) => {
   useEffect(() => {
     const interval = setInterval(() => incrementCounter(counterId), 1000);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
+
   return <BasicCounter count={count} counterId={counterId} />;
 };
 

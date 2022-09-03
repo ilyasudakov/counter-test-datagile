@@ -10,6 +10,8 @@
   "files": [
     "dist"
   ],
+  "type": "module",
+  "types": "./dist/index.d.ts",
   "main": "./dist/counter-test-datagile.umd.js",
   "module": "./dist/counter-test-datagile.es.js",
   "exports": {
@@ -23,7 +25,7 @@
     "email": "ilyasudakov.dev@gmail.com",
     "url": "https://ilyasudakov.vercel.app"
   },
-  "version": "0.0.3",
+  "version": "0.0.14",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -31,22 +33,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@formkit/auto-animate": "^1.0.0-beta.3",
     "@reduxjs/toolkit": "^1.8.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
     "vite-plugin-svgr": "^2.2.1"
   },
   "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "@types/node": "^18.7.14",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "@types/rollup-plugin-postcss": "^3.1.4",
     "@vitejs/plugin-react": "^2.0.1",
     "autoprefixer": "^10.4.8",
     "postcss": "^8.4.16",
+    "rollup-plugin-postcss": "^4.0.2",
     "tailwindcss": "^3.1.8",
     "typescript": "^4.6.4",
-    "vite": "^3.0.7"
+    "vite": "^3.0.7",
+    "vite-plugin-dts": "^1.4.1"
   }
 }
