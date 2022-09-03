@@ -25,17 +25,20 @@ export default function counterReducer(
   action: AnyAction
 ): countersListStateType {
   switch (action.type) {
-    case ADD_COUNTER:
+    case ADD_COUNTER: {
+      const prevCountersSum = Object.entries(state.counters).reduce(
+        (sum, [_, counter]) => sum + counter.count,
+        0
+      );
       return {
         ...state,
         counters: {
           ...state.counters,
-          ...{
-            [state.uuid]: { count: 0, counterId: state.uuid },
-          },
+          [state.uuid]: { count: prevCountersSum, counterId: state.uuid },
         },
         uuid: state.uuid + 1,
       };
+    }
     case REMOVE_COUNTER: {
       let filteredCounters = Object.assign({}, state.counters);
       delete filteredCounters[action.payload];

@@ -54,7 +54,10 @@ function Counter({
       >
         -
       </Button>
-      <Button className="ml-6" onClick={() => removeCounter(counterId)}>
+      <Button
+        className="ml-6 bg-red-100 text-red-400"
+        onClick={() => removeCounter(counterId)}
+      >
         Удалить
       </Button>
     </div>
