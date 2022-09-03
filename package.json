@@ -8,12 +8,14 @@
     "Tailwind"
   ],
   "files": [
-    "dist"
+    "dist",
+    "dist/*.css"
   ],
   "type": "module",
   "types": "./dist/index.d.ts",
   "main": "./dist/counter-test-datagile.umd.js",
   "module": "./dist/counter-test-datagile.es.js",
+  "style": "style.css",
   "exports": {
     ".": {
       "import": "./dist/counter-test-datagile.es.js",
@@ -25,7 +27,7 @@
     "email": "ilyasudakov.dev@gmail.com",
     "url": "https://ilyasudakov.vercel.app"
   },
-  "version": "0.0.14",
+  "version": "0.0.19",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

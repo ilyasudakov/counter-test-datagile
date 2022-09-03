@@ -12,6 +12,7 @@ npm i counter-test-datagile
 
 ```javascript
 import Counter from 'counter-test-datagile';
+import 'counter-test-datagile/dist/style.css';
 
 const MyComponent = () => {
   return (
