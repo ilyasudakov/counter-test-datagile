@@ -1,8 +1,17 @@
 {
   "name": "counter-test-datagile",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/counter-test-datagile.umd.js",
+  "module": "./dist/counter-test-datagile.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/counter-test-datagile.es.js",
+      "require": "./dist/counter-test-datagile.umd.js"
+    }
+  },
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -18,6 +27,7 @@
     "vite-plugin-svgr": "^2.2.1"
   },
   "devDependencies": {
+    "@types/node": "^18.7.14",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",

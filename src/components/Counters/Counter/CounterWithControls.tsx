@@ -11,12 +11,12 @@ import { ReactComponent as MinusIcon } from '../../../assets/minus.svg';
 
 const buttonClassses = `rounded-[25px] bg-inherit text-2xl px-0 py-0`;
 
-function CounterWithControls({
+const CounterWithControls = ({
   count,
   counterId,
   incrementCounter,
   decrementCounter,
-}: CounterProps) {
+}: CounterProps) => {
   return (
     <BasicCounter
       count={count}
@@ -39,7 +39,7 @@ function CounterWithControls({
       }
     />
   );
-}
+};
 
 // Counter Item HOC
 const connector = connect(

@@ -4,14 +4,14 @@ import { removeCounter } from '../counterActions';
 
 import Button from '../../Button';
 
-function BasicCounter({
+const BasicCounter = ({
   counterId,
   count,
   removeCounter,
   leftSideControls,
   rightSideControls,
   controlPanel,
-}: BasicCounterProps) {
+}: BasicCounterProps) => {
   return (
     <div className="flex items-center gap-2">
       <div className="bg-stone-100 flex gap-4 rounded-md px-4 py-2 w-fit relative">
@@ -28,7 +28,7 @@ function BasicCounter({
       <IDBadge counterId={counterId} />
     </div>
   );
-}
+};
 
 type OwnPropsType = RootState['counters'][string] & {
   leftSideControls?: React.ReactNode;

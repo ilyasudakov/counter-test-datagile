@@ -6,17 +6,17 @@ import { RootState } from '../../../store';
 import { incrementCounter } from '../counterActions';
 import { useEffect } from 'react';
 
-function CounterWithInterval({
+const CounterWithInterval = ({
   count,
   counterId,
   incrementCounter,
-}: CounterWithIntervalProps) {
+}: CounterWithIntervalProps) => {
   useEffect(() => {
     const interval = setInterval(() => incrementCounter(counterId), 1000);
     return () => clearInterval(interval);
   }, []);
   return <BasicCounter count={count} counterId={counterId} />;
-}
+};
 
 // Counter with Interval Item HOC
 const connector = connect(

@@ -8,7 +8,7 @@ import CounterWithInterval from './Counter/CounterWithInterval';
 import { RootState } from '../../store';
 import { addCounter } from './counterActions';
 
-function Counters({ addCounter, counterList }: CountersProps) {
+const Counters = ({ addCounter, counterList }: CountersProps) => {
   const [parent] = useAutoAnimate<HTMLUListElement>();
   return (
     <div>
@@ -27,7 +27,7 @@ function Counters({ addCounter, counterList }: CountersProps) {
       </ul>
     </div>
   );
-}
+};
 
 // Counters HOC
 const connector = connect(
