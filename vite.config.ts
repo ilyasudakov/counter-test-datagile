@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/components/index.ts'),
-      name: 'Counter Test Task for Datagile',
+      name: 'counter-test-datagile',
       fileName: (format) => `counter-test-datagile.${format}.js`,
     },
     rollupOptions: {
