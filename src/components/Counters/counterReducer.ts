@@ -10,7 +10,7 @@ type countersListStateType = {
   counters: { [id: string]: counterStateType };
 };
 const initialState: countersListStateType = {
-  uuid: 0,
+  uuid: 1,
   counters: {},
 };
 
