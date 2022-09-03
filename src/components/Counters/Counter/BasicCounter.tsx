@@ -13,18 +13,27 @@ function BasicCounter({
   controlPanel,
 }: BasicCounterProps) {
   return (
-    <div className="bg-stone-100 flex gap-4 rounded-md px-4 py-2 w-fit relative pl-[2rem]">
-      <div className="text-sm text-stone-400 absolute top-[5px] left-[8px]">{`#${counterId}`}</div>
-      {leftSideControls}
-      <div className="text-3xl">{count}</div>
-      {rightSideControls}
-      <Button
-        className="ml-6 bg-red-100 text-red-400"
-        onClick={() => removeCounter(counterId)}
-      >
-        Удалить
-      </Button>
-      {controlPanel}
+    <div className="flex items-center gap-2">
+      <div className="bg-stone-100 flex gap-4 rounded-md px-4 py-2 w-fit relative">
+        {leftSideControls}
+        <div className="flex items-center text-xl border rounded-md px-4 py-1 bg-white">
+          {count}
+        </div>
+        {rightSideControls}
+      </div>
+      <div className="flex">
+        <Button
+          className="bg-red-100 text-red-700 text-sm"
+          onClick={() => removeCounter(counterId)}
+        >
+          Удалить
+        </Button>
+        {controlPanel}
+      </div>
+      <div
+        className="text-sm bg-indigo-100 rounded-[25px] px-2 
+      text-indigo-700"
+      >{`ID: ${counterId}`}</div>
     </div>
   );
 }

@@ -6,6 +6,11 @@ import BasicCounter from './BasicCounter';
 import { RootState } from '../../../store';
 import { incrementCounter, decrementCounter } from '../counterActions';
 
+import { ReactComponent as PlusIcon } from '../../../assets/plus.svg';
+import { ReactComponent as MinusIcon } from '../../../assets/minus.svg';
+
+const buttonClassses = `rounded-[25px] bg-inherit text-2xl px-0 py-0`;
+
 function CounterWithControls({
   count,
   counterId,
@@ -18,18 +23,18 @@ function CounterWithControls({
       counterId={counterId}
       leftSideControls={
         <Button
-          className="rounded-[25px]"
+          className={buttonClassses}
           onClick={() => incrementCounter(counterId)}
         >
-          +
+          <PlusIcon className="text-blue-400" />
         </Button>
       }
       rightSideControls={
         <Button
-          className="rounded-[25px]"
+          className={buttonClassses}
           onClick={() => decrementCounter(counterId)}
         >
-          -
+          <MinusIcon />
         </Button>
       }
     />
