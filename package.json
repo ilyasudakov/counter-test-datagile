@@ -1,5 +1,12 @@
 {
   "name": "counter-test-datagile",
+  "description": "Тестовое задание со счетчиками для Datagile",
+  "keywords": [
+    "React",
+    "Typescript",
+    "Redux",
+    "Tailwind"
+  ],
   "files": [
     "dist"
   ],
@@ -16,7 +23,7 @@
     "email": "ilyasudakov.dev@gmail.com",
     "url": "https://ilyasudakov.vercel.app"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

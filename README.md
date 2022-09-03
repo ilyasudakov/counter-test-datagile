@@ -2,7 +2,27 @@
 
 ## [Демонстрация на Vercel](https://counter-test-datagile.vercel.app/)
 
-## Инструкция
+## Инструкция для установки npm package
+
+```
+npm i counter-test-datagile
+```
+
+В приложении:
+
+```javascript
+import { Counters } from 'counter-test-datagile';
+
+const MyComponent = () => {
+  return (
+    <>
+      <Counters />
+    </>
+  );
+};
+```
+
+## Инструкция для репозитория
 
 ```
 git clone https://github.com/ilyasudakov/counter-test-datagile.git
