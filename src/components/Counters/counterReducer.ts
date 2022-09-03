@@ -2,6 +2,7 @@ import { AnyAction } from '@reduxjs/toolkit';
 import { RootState } from '../../store';
 import {
   ADD_COUNTER,
+  DECREMENT_COUNTER,
   INCREMENT_COUNTER,
   REMOVE_COUNTER,
 } from './counterActions';
@@ -53,6 +54,18 @@ export default function counterReducer(
           [action.payload]: {
             ...state.counters[action.payload],
             count: state.counters[action.payload].count + 1,
+          },
+        },
+      };
+    }
+    case DECREMENT_COUNTER: {
+      return {
+        ...state,
+        counters: {
+          ...state.counters,
+          [action.payload]: {
+            ...state.counters[action.payload],
+            count: state.counters[action.payload].count - 1,
           },
         },
       };

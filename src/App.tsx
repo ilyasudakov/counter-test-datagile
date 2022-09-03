@@ -1,10 +1,10 @@
-import Counter from './components/counter';
+import Counters from './components/Counters';
 
 function App() {
   return (
-    <div>
-      Counter App
-      <Counter />
+    <div className="container mx-auto py-6 grid gap-4 px-4">
+      <h1 className="text-3xl">Тест задание со счетчиками</h1>
+      <Counters />
     </div>
   );
 }
