@@ -8,6 +8,7 @@ import { incrementCounter, decrementCounter } from '../counterActions';
 
 import { ReactComponent as PlusIcon } from '../../../assets/plus.svg';
 import { ReactComponent as MinusIcon } from '../../../assets/minus.svg';
+import { memo } from 'react';
 
 const buttonClassses = `rounded-[25px] bg-inherit text-2xl px-0 py-0`;
 
@@ -50,4 +51,4 @@ const connector = connect(
   { incrementCounter, decrementCounter }
 );
 type CounterProps = ConnectedProps<typeof connector>;
-export default connector(CounterWithControls);
+export default memo(connector(CounterWithControls));

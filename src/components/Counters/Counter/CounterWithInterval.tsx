@@ -4,7 +4,7 @@ import BasicCounter from './BasicCounter';
 
 import { RootState } from '../../../store';
 import { incrementCounter } from '../counterActions';
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 
 const CounterWithInterval = ({
   count,
@@ -30,4 +30,4 @@ const connector = connect(
   { incrementCounter }
 );
 type CounterWithIntervalProps = ConnectedProps<typeof connector>;
-export default connector(CounterWithInterval);
+export default memo(connector(CounterWithInterval));
